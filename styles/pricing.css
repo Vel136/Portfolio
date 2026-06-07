@@ -12,7 +12,7 @@
 .pricing-card {
   position: relative;
   border-radius: var(--radius-md);
-  padding: var(--space-8);
+  padding: var(--space-4) var(--space-8);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   display: flex;
@@ -55,7 +55,7 @@
 }
 
 .pricing-card__header {
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-3);
 }
 
 .pricing-card__tier {
@@ -79,11 +79,11 @@
 
 .pricing-card__range {
   font-family: var(--font-display);
-  font-size: 2.6rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--color-crimson);
   line-height: 1;
-  margin-top: var(--space-4);
+  margin-top: var(--space-2);
   letter-spacing: -0.03em;
 }
 
@@ -92,7 +92,7 @@
   font-weight: 300;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-3);
 }
 
 .pricing-card__divider {
@@ -126,7 +126,7 @@
 }
 
 .pricing-card__cta {
-  margin-top: var(--space-8);
+  margin-top: var(--space-4);
   display: flex;
   align-items: center;
   justify-content: center;
