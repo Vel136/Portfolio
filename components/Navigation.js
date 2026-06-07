@@ -1,88 +1,59 @@
-/**
- * Navigation.js — Sticky horizontal navigation component
- * Highlights the active section on scroll using IntersectionObserver.
- */
-
-class Navigation {
-  /**
-   * @param {Array<{id: string, label: string}>} navItems
-   */
-  constructor(navItems) {
+class Sidebar {
+  constructor(brand, navItems) {
+    this.brand = brand;
     this.navItems = navItems;
     this._activeId = null;
     this._observer = null;
+    this._links = [];
   }
 
-  /**
-   * Render the nav and append to container.
-   * @param {HTMLElement} container
-   */
   render(container) {
-    const nav = document.createElement('nav');
-    nav.className = 'site-nav';
-    nav.setAttribute('aria-label', 'Main navigation');
+    const sidebar = document.createElement('aside');
+    sidebar.className = 'sidebar';
+    sidebar.setAttribute('aria-label', 'Site navigation');
 
-    const inner = document.createElement('div');
-    inner.className = 'site-nav__inner';
+    sidebar.innerHTML = `
+      <div class="sidebar__brand">
+        <span class="sidebar__name">${this.brand.name}</span>
+        <span class="sidebar__tagline">${this.brand.tagline}</span>
+      </div>
+      <div class="sidebar__divider"></div>
+      <nav class="sidebar__nav" aria-label="Sections">
+        <span class="sidebar__nav-label">Sections</span>
+      </nav>
+    `;
+
+    const nav = sidebar.querySelector('.sidebar__nav');
 
     this.navItems.forEach(item => {
-      const a = document.createElement('a');
-      a.className = 'site-nav__link';
-      a.href = `#${item.id}`;
-      a.textContent = item.label;
-      a.dataset.target = item.id;
+      const btn = document.createElement('button');
+      btn.className = 'sidebar__link';
+      btn.textContent = item.label;
+      btn.dataset.target = item.id;
 
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
+      btn.addEventListener('click', () => {
         const target = document.getElementById(item.id);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
 
-      inner.appendChild(a);
+      nav.appendChild(btn);
+      this._links.push(btn);
     });
 
-    nav.appendChild(inner);
-    container.appendChild(nav);
-
-    this._navEl = nav;
-    this._innerEl = inner;
-
-    this._initScrollEffects();
+    container.appendChild(sidebar);
     this._initActiveObserver();
   }
 
-  _initScrollEffects() {
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrolled = window.scrollY > 40;
-          this._navEl.classList.toggle('scrolled', scrolled);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-  }
-
   _initActiveObserver() {
-    const options = {
-      root: null,
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: 0,
-    };
+    this._observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) this._setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-15% 0px -70% 0px', threshold: 0 }
+    );
 
-    this._observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this._setActive(entry.target.id);
-        }
-      });
-    }, options);
-
-    // Observe after sections are rendered
     requestAnimationFrame(() => {
       this.navItems.forEach(item => {
         const section = document.getElementById(item.id);
@@ -94,15 +65,8 @@ class Navigation {
   _setActive(id) {
     if (this._activeId === id) return;
     this._activeId = id;
-
-    this._innerEl.querySelectorAll('.site-nav__link').forEach(link => {
+    this._links.forEach(link => {
       link.classList.toggle('active', link.dataset.target === id);
     });
-  }
-
-  destroy() {
-    if (this._observer) {
-      this._observer.disconnect();
-    }
   }
 }
