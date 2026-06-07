@@ -66,6 +66,7 @@ class App {
 
     const sections = [
       new PastWorks(SiteConfig.works),
+      new Libraries(SiteConfig.libraries),
       new Pricing(SiteConfig.pricing),
       new Achievements(SiteConfig.achievements),
       new Skills(SiteConfig.skills),

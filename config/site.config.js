@@ -13,6 +13,7 @@ const SiteConfig = {
 
   navigation: [
     { id: "works",        label: "Past Works"   },
+    { id: "libraries",    label: "Libraries"    },
     { id: "pricing",      label: "Pricing"      },
     { id: "achievements", label: "Achievements" },
     { id: "skills",       label: "Skills"       },
@@ -186,6 +187,59 @@ const SiteConfig = {
     notes: "Refactor > rewrite blindly"
   }
 ],
+
+  // ─── Libraries ───────────────────────────────────────────────────────────────
+  libraries: [
+    {
+      name: "Vetra",
+      tagline: "Physics-accurate projectile simulation",
+      description: "Kinematic bullet trajectories using exact formulas instead of frame-by-frame updates. Supports penetration, bounce, drag models, Magnus effect, and parallel physics across Actors.",
+      url: "https://github.com/Vel136/Vetra",
+      tags: ["Physics", "Ballistics", "Parallel"],
+    },
+    {
+      name: "VeSignal",
+      tagline: "Fast, type-safe signals for Roblox",
+      description: "High-performance Luau signal library with connection pooling, priority ordering, async-aware firing, and UDTF-derived type signatures for full IDE inference.",
+      url: "https://github.com/Vel136/VeSignal",
+      tags: ["Signals", "Type-safe", "Async"],
+    },
+    {
+      name: "Ryxen",
+      tagline: "Reactive state store for Luau",
+      description: "Manages nested state through dot-path keys with computed values, batched updates, undo/redo history, middleware, and schema validation. Depends on VeSignal.",
+      url: "https://github.com/Vel136/Ryxen",
+      tags: ["State", "Reactive", "Middleware"],
+    },
+    {
+      name: "Quantix",
+      tagline: "Stat modifier pipeline",
+      description: "Typed, phase-ordered stat modifier library for numeric and table-based statistics. Eight deterministic evaluation phases ensure modifiers stack exactly as intended.",
+      url: "https://github.com/Vel136/Quantix",
+      tags: ["Stats", "Modifiers", "Pipeline"],
+    },
+    {
+      name: "Fluix",
+      tagline: "Adaptive object pooling",
+      description: "Tracks acquisition demand with an exponential moving average to pre-warm and shrink pools to match real usage. Hot/cold tiers, cross-pool borrowing, and zero-allocation critical path.",
+      url: "https://github.com/Vel136/Fluix",
+      tags: ["Pooling", "Performance", "Memory"],
+    },
+    {
+      name: "Resonix",
+      tagline: "Physics-based acoustic simulation",
+      description: "Beer-Lambert occlusion, frequency-dependent material absorption, and network replication in one library. 13 materials, 14 preset sound profiles, and a three-tier accuracy system.",
+      url: "https://github.com/Vel136/Resonix",
+      tags: ["Audio", "Physics", "Networking"],
+    },
+    {
+      name: "Alloy",
+      tagline: "Zero-allocation hashing",
+      description: "Maps integers, floats, Vector2s, Vector3s, and number tuples to unsigned 32-bit integers. Implements boost::hash_combine with MurmurHash3 finalization. Safe for hot-path code.",
+      url: "https://github.com/Vel136/Alloy",
+      tags: ["Hashing", "Performance", "Math"],
+    },
+  ],
 
   // ─── Terms of Service ────────────────────────────────────────────────────────
   tos: [
