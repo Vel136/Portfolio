@@ -1,0 +1,238 @@
+/* ============================================================
+   banner.css — Hero / Banner section styles
+   ============================================================ */
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+/* ── Background ── */
+.banner__bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--banner-bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.banner__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(139, 0, 20, 0.4) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(10,2,5,0.5) 0%, rgba(10,2,5,0.9) 100%);
+}
+
+/* ── Animated grain texture ── */
+.banner__grain {
+  position: absolute;
+  inset: -50%;
+  width: 200%; height: 200%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  animation: grainShift 0.5s steps(2) infinite;
+}
+
+@keyframes grainShift {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-2%, -3%); }
+  50%  { transform: translate(3%, 1%); }
+  75%  { transform: translate(-1%, 4%); }
+  100% { transform: translate(2%, -2%); }
+}
+
+/* ── Grid overlay ── */
+.banner__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(220, 20, 60, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(220, 20, 60, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
+}
+
+/* ── Diagonal accent line ── */
+.banner__accent-line {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.banner__accent-line::before {
+  content: '';
+  position: absolute;
+  top: 15%; left: -10%;
+  width: 120%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(220,20,60,0.25) 40%, rgba(220,20,60,0.25) 60%, transparent);
+  transform: rotate(-8deg);
+}
+
+/* ── Scan line ── */
+.banner__scanline {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.banner__scanline::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(220,20,60,0.5), transparent);
+  animation: scanLine 8s linear infinite;
+  animation-delay: 3s;
+}
+
+/* ── Orbs ── */
+.banner__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.banner__orb--1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(139,0,20,0.2) 0%, transparent 70%);
+  top: -20%; left: -15%;
+  animation: floatOrb1 14s ease-in-out infinite;
+}
+
+.banner__orb--2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(220,20,60,0.12) 0%, transparent 70%);
+  bottom: -10%; right: -10%;
+  animation: floatOrb2 17s ease-in-out infinite;
+}
+
+.banner__orb--3 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(15,23,42,0.6) 0%, transparent 70%);
+  top: 35%; left: 55%;
+  animation: floatOrb1 20s ease-in-out infinite reverse;
+}
+
+@keyframes floatOrb1 {
+  0%,100% { transform: translate(0, 0) scale(1);          }
+  33%      { transform: translate(50px,-40px) scale(1.06); }
+  66%      { transform: translate(-25px,25px) scale(0.94); }
+}
+
+@keyframes floatOrb2 {
+  0%,100% { transform: translate(0, 0) scale(1);           }
+  33%      { transform: translate(-40px, 50px) scale(1.08); }
+  66%      { transform: translate(25px,-25px) scale(0.96);  }
+}
+
+/* ── Content ── */
+.banner__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  animation: fadeUp 1.2s var(--ease-out) both;
+  animation-delay: 0.2s;
+}
+
+/* ── Brand name — serif editorial ── */
+.banner__brand {
+  font-family: var(--font-display);
+  font-size: var(--size-hero);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--color-white);
+  animation: glowPulse 4s ease-in-out infinite;
+  text-shadow: var(--glow-brand);
+  line-height: 0.95;
+}
+
+/* ── Tagline ── */
+.banner__tagline {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-rose-light);
+  opacity: 0.8;
+  animation: fadeIn 1.6s var(--ease-out) both;
+  animation-delay: 0.6s;
+}
+
+/* ── Thin rule under brand ── */
+.banner__rule {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-crimson), transparent);
+  animation: fadeIn 1.6s var(--ease-out) both;
+  animation-delay: 0.5s;
+}
+
+/* ── Scroll CTA ── */
+.banner__scroll-cta {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  animation: fadeIn 2s var(--ease-out) both;
+  animation-delay: 1.4s;
+  cursor: pointer;
+}
+
+.banner__scroll-label {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.banner__scroll-arrow {
+  width: 20px; height: 20px;
+  border-right: 1.5px solid rgba(220,20,60,0.5);
+  border-bottom: 1.5px solid rgba(220,20,60,0.5);
+  transform: rotate(45deg);
+  animation: arrowBounce 2s ease-in-out infinite;
+}
+
+@keyframes arrowBounce {
+  0%,100% { transform: rotate(45deg) translate(0,0);    opacity: 0.5; }
+  50%      { transform: rotate(45deg) translate(4px,4px); opacity: 1;   }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .banner__orb--1 { width: 350px; height: 350px; }
+  .banner__orb--2 { width: 280px; height: 280px; }
+  .banner__orb--3 { display: none; }
+}

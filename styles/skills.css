@@ -1,0 +1,92 @@
+/* ============================================================
+   skills.css — Skills section
+   ============================================================ */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--skills-card-min-width), 1fr));
+  gap: var(--skills-grid-gap);
+}
+
+/* ── Skill Card ── */
+.skill-card {
+  padding: var(--skills-card-padding);
+  border-radius: 4px;
+  background: var(--color-white);
+  border: 1px solid rgba(220,20,60,0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+  transition:
+    transform var(--duration-slow) var(--ease-spring),
+    box-shadow var(--duration-slow) var(--ease-out),
+    border-color var(--duration-slow);
+}
+
+/* Left accent bar */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 2px; height: 0;
+  background: var(--color-crimson);
+  transition: height 0.4s var(--ease-out);
+}
+
+.skill-card:hover::before {
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(220,20,60,0.07), 0 0 0 1px rgba(220,20,60,0.18);
+  border-color: rgba(220,20,60,0.18);
+}
+
+/* ── Index ── */
+.skill-card__index {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  color: var(--color-crimson);
+  opacity: 0.45;
+  letter-spacing: 0.1em;
+}
+
+/* ── Title ── */
+.skill-card__title {
+  font-family: var(--font-display);
+  font-size: var(--size-2xl);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--section-text);
+  line-height: 1.15;
+}
+
+/* ── Description ── */
+.skill-card__description {
+  font-size: var(--size-sm);
+  font-weight: 300;
+  color: var(--section-text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+/* ── Notes ── */
+.skill-card__notes {
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-left: 2px solid rgba(220,20,60,0.25);
+  background: rgba(220,20,60,0.03);
+  border-radius: 0 2px 2px 0;
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  color: var(--color-crimson);
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}

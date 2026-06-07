@@ -1,0 +1,160 @@
+/* ============================================================
+   achievements.css — Achievements section
+   ============================================================ */
+
+.achievements-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+/* ── Bio column ── */
+.achievements-bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.achievements-bio p {
+  font-size: var(--size-base);
+  font-weight: 300;
+  color: var(--section-text-muted);
+  line-height: 1.85;
+}
+
+/* ── Project links ── */
+.achievements-projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.achievements-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--size-base);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-crimson);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid rgba(220,20,60,0.15);
+  border-radius: 4px;
+  background: var(--color-white);
+  transition: color var(--duration-base), border-color var(--duration-base),
+              background var(--duration-base), box-shadow var(--duration-base);
+}
+
+.achievements-project-link:hover {
+  color: #8b0000;
+  border-color: rgba(220,20,60,0.3);
+  background: rgba(220,20,60,0.03);
+  box-shadow: 0 4px 16px rgba(220,20,60,0.07);
+}
+
+.achievements-project-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* ── Highlights column ── */
+.achievements-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--achievements-card-gap);
+}
+
+.achievement-card {
+  padding: var(--space-6);
+  border-radius: 4px;
+  border: 1px solid rgba(220,20,60,0.1);
+  background: var(--color-white);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  transition: transform var(--duration-slow) var(--ease-spring),
+              box-shadow var(--duration-slow) var(--ease-out),
+              border-color var(--duration-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top crimson bar on hover */
+.achievement-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--color-crimson);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out);
+}
+
+.achievement-card:hover::after { transform: scaleX(1); }
+
+.achievement-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(220,20,60,0.07), 0 0 0 1px rgba(220,20,60,0.15);
+  border-color: rgba(220,20,60,0.15);
+}
+
+.achievement-card__year {
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-crimson);
+  opacity: 0.65;
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.achievement-card__title {
+  font-family: var(--font-display);
+  font-size: var(--size-2xl);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--section-text);
+  margin-bottom: var(--space-3);
+  line-height: 1.15;
+}
+
+.achievement-card__detail {
+  font-size: var(--size-sm);
+  font-weight: 300;
+  color: var(--section-text-muted);
+  line-height: 1.75;
+  margin-bottom: var(--space-4);
+}
+
+.achievement-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.achievement-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--size-xs);
+  letter-spacing: 0.05em;
+  color: var(--color-crimson);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid rgba(220,20,60,0.2);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background var(--duration-fast), color var(--duration-fast), border-color var(--duration-fast);
+}
+
+.achievement-card__link:hover {
+  background: rgba(220,20,60,0.06);
+  border-color: rgba(220,20,60,0.4);
+  color: #8b0000;
+}
+
+.achievement-card__link svg { width: 10px; height: 10px; }
+
+@media (max-width: 900px) {
+  .achievements-layout { grid-template-columns: 1fr; }
+}

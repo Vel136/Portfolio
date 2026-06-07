@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VeDevelopment — Game developer specialising in Unreal Engine 5 systems, multiplayer architecture, and production-grade game frameworks.">
+  <meta name="theme-color" content="#0a0205">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="VeDevelopment">
+  <meta property="og:description" content="Engineering systems. Shipping worlds.">
+  <meta property="og:type" content="website">
+
+  <title>VeDevelopment</title>
+
+  <!-- ── Google Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- ── Styles ── -->
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/banner.css">
+  <link rel="stylesheet" href="styles/sections.css">
+  <link rel="stylesheet" href="styles/works.css">
+  <link rel="stylesheet" href="styles/pricing.css">
+  <link rel="stylesheet" href="styles/achievements.css">
+  <link rel="stylesheet" href="styles/skills.css">
+  <link rel="stylesheet" href="styles/contact.css">
+</head>
+<body>
+
+  <!-- Application mount point -->
+  <div id="app" role="main"></div>
+
+  <!-- Load order: config → app → components → bootstrap -->
+  <script src="config/site.config.js"></script>
+  <script src="app.js"></script>
+  <script src="components/Banner.js"></script>
+  <script src="components/Navigation.js"></script>
+  <script src="components/PastWorks.js"></script>
+  <script src="components/Pricing.js"></script>
+  <script src="components/Achievements.js"></script>
+  <script src="components/Skills.js"></script>
+  <script src="components/Contact.js"></script>
+
+</body>
+</html>
