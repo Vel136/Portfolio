@@ -69,6 +69,7 @@ class App {
       new Pricing(SiteConfig.pricing),
       new Achievements(SiteConfig.achievements),
       new Skills(SiteConfig.skills),
+      new Tos(SiteConfig.tos),
       new Contact(SiteConfig.contact),
     ];
 

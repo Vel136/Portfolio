@@ -16,6 +16,7 @@ const SiteConfig = {
     { id: "pricing",      label: "Pricing"      },
     { id: "achievements", label: "Achievements" },
     { id: "skills",       label: "Skills"       },
+    { id: "tos",          label: "Terms"        },
     { id: "contact",      label: "Contact"      },
   ],
 
@@ -185,6 +186,90 @@ const SiteConfig = {
     notes: "Refactor > rewrite blindly"
   }
 ],
+
+  // ─── Terms of Service ────────────────────────────────────────────────────────
+  tos: [
+    {
+      number: "1",
+      title: "Scope of Work & Documentation",
+      items: [
+        "The client must provide a written, structured specification of all requested systems before development begins.",
+        "References to other games (e.g., \"like Blade Ball\") are not accepted as valid specifications. Describe systems in functional terms.",
+        "Each requested system must be listed clearly with features and expected behavior.",
+        "Any feature not explicitly written in the approved specification is not included in the commission.",
+        "After approval, the specification becomes the final contract scope.",
+      ],
+    },
+    {
+      number: "2",
+      title: "Pricing & Payments",
+      items: [
+        "Pricing is based strictly on the approved specification.",
+        "A non-refundable upfront payment (percentage agreed beforehand) is required before work begins.",
+        "Additional features requested after approval are treated as new paid work and quoted separately.",
+        "Final files are delivered only after full payment is received.",
+      ],
+    },
+    {
+      number: "3",
+      title: "Revisions & Changes",
+      items: [
+        "Minor revisions are allowed only if they remain within the original approved scope.",
+        "Major changes, redesigns, or new mechanics are considered scope expansion and require additional payment.",
+        "Vague requests such as \"make it better\" will not be acted upon without written clarification.",
+      ],
+    },
+    {
+      number: "4",
+      title: "Communication Requirements",
+      items: [
+        "The client must communicate clearly and respond to questions regarding specifications.",
+        "Delays caused by missing information from the client may extend the delivery timeline.",
+        "Verbal or casual chat messages do not override the approved written specification.",
+      ],
+    },
+    {
+      number: "5",
+      title: "Delivery & Acceptance",
+      items: [
+        "Work is considered complete once all items in the approved specification are implemented.",
+        "The client has a limited review period (agreed beforehand) to report bugs related to listed features.",
+        "Requests outside the original specification after delivery are treated as new commissions.",
+      ],
+    },
+    {
+      number: "6",
+      title: "Ownership & Usage",
+      items: [
+        "Ownership transfer occurs only after full payment.",
+        "Until payment is completed, all work remains the developer's property.",
+        "The developer reserves the right to showcase the work in a portfolio unless otherwise agreed in writing.",
+      ],
+    },
+    {
+      number: "7",
+      title: "Refund Policy",
+      items: [
+        "Upfront payments are non-refundable once development has started.",
+        "If the client cancels the project, completed work may be delivered at the developer's discretion.",
+      ],
+    },
+    {
+      number: "8",
+      title: "Professional Conduct",
+      items: [
+        "Respectful communication is required from both parties.",
+        "Spam tagging, rushing, or pressuring does not accelerate development.",
+      ],
+    },
+    {
+      number: "9",
+      title: "Agreement",
+      items: [
+        "By commissioning work, the client confirms they have read and agreed to these terms. No work begins until the specification and payment terms are approved.",
+      ],
+    },
+  ],
 
   // ─── Contact ──────────────────────────────────────────────────────────────────
   contact: [
