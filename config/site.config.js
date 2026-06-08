@@ -239,6 +239,34 @@ const SiteConfig = {
       url: "https://github.com/Vel136/Alloy",
       tags: ["Hashing", "Performance", "Math"],
     },
+    {
+      name: "Grove",
+      tagline: "Production-grade loose octree",
+      description: "Full 3D spatial queries in Roblox Luau. Supports radius, box, and nearest-neighbor queries with node pooling and stack-based traversal to keep GC pressure minimal.",
+      url: "https://github.com/Vel136/Grove",
+      tags: ["Spatial", "3D", "Performance"],
+    },
+    {
+      name: "Meadow",
+      tagline: "Production-grade loose quadtree",
+      description: "2D spatial queries on Roblox's XZ plane. Loose bounds, node pooling, O(1) back-references, and iterative traversal. QueryRadius, QueryBox, and k-nearest neighbors.",
+      url: "https://github.com/Vel136/Meadow",
+      tags: ["Spatial", "2D", "Performance"],
+    },
+    {
+      name: "Stratix",
+      tagline: "Hierarchical state machine framework",
+      description: "Models complex behavior as a tree of named states with guarded transitions, entry/exit callbacks, parallel regions, history tracking, and an event queue.",
+      url: "https://github.com/Vel136/Stratix",
+      tags: ["State Machine", "Events", "Hierarchy"],
+    },
+    {
+      name: "Motix",
+      tagline: "Multi-layer animation controller",
+      description: "Handles multi-layer animation blending, predicate-driven state machine transitions, priority-based exclusive groups, and full network replication via MotixNet.",
+      url: "https://github.com/Vel136/Motix",
+      tags: ["Animation", "Networking", "Blending"],
+    },
   ],
 
   // ─── Terms of Service ────────────────────────────────────────────────────────
