@@ -51,20 +51,9 @@ const SiteConfig = {
       src: "https://x.com/vedevelopment_/status/2022252855156146397",
       thumbnail: null,
       title: "Personal FPS Project",
-      description: "Long-term passion project built over two months in collaboration with an animator. Focused on engineering and system design.",
+      description: "Passion project built over 6 months in collaboration with an animator. Focused on engineering and system design.",
       price: null,
-      estimatedTime: "Ongoing (~2 months)",
-      tags: ["FPS", "Multiplayer", "Roblox"],
-    },
-    {
-      id: "work-4",
-      type: "youtube",
-      src: "https://x.com/vedevelopment_/status/2022252855156146397",
-      thumbnail: null,
-      title: "Personal FPS Project",
-      description: "Long-term passion project built over two months in collaboration with an animator. Focused on engineering and system design.",
-      price: null,
-      estimatedTime: "Ongoing (~2 months)",
+      estimatedTime: "Done (~6 months)",
       tags: ["FPS", "Multiplayer", "Roblox"],
     },
   ],
@@ -118,7 +107,7 @@ const SiteConfig = {
   achievements: {
     bio: [
       "I've been actively developing games since 2023 and have contributed to three shipped projects along with several smaller works. While my portfolio site isn't fully up to date, I regularly share my past work and prototypes through YouTube and social media.",
-      "I'm also currently developing a long-term personal FPS project that I've been building for about two months in collaboration with an animator. It's an ongoing passion project focused on refining my engineering and system design skills.",
+      "I also recently completed a long-term personal FPS project that I built over 6 months in collaboration with an animator. A passion project focused on refining my engineering and system design skills.",
     ],
     highlights: [
       {

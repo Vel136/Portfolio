@@ -39,7 +39,6 @@
   height: 100%;
   object-fit: cover;
   border: none;
-  pointer-events: none;
 }
 
 .work-card__overlay {
@@ -57,6 +56,7 @@
   justify-content: flex-end;
   padding: var(--space-5);
   opacity: 0;
+  pointer-events: none;
   transition: opacity var(--duration-slow) var(--ease-out);
 }
 
