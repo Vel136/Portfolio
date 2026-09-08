@@ -3,50 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VeDevelopment — Game developer specialising in Unreal Engine 5 systems, multiplayer architecture, and production-grade game frameworks.">
-  <meta name="theme-color" content="#0a0205">
+  <meta name="description" content="Ve. Game systems developer working in Roblox Luau: combat, inventory, physics, and state management systems.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="VeDevelopment">
-  <meta property="og:description" content="Engineering systems. Shipping worlds.">
+  <title>Ve | Game systems developer</title>
+
+  <meta property="og:title" content="Ve">
+  <meta property="og:description" content="Game systems developer working in Roblox Luau.">
   <meta property="og:type" content="website">
 
-  <title>VeDevelopment</title>
-
-  <!-- ── Google Fonts ── -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- ── Styles ── -->
-  <link rel="stylesheet" href="styles/variables.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/banner.css">
-  <link rel="stylesheet" href="styles/sections.css">
-  <link rel="stylesheet" href="styles/works.css">
-  <link rel="stylesheet" href="styles/pricing.css">
-  <link rel="stylesheet" href="styles/achievements.css">
-  <link rel="stylesheet" href="styles/skills.css">
-  <link rel="stylesheet" href="styles/libraries.css">
-  <link rel="stylesheet" href="styles/tos.css">
-  <link rel="stylesheet" href="styles/contact.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Application mount point -->
-  <div id="app" role="main"></div>
+  <div id="app"></div>
 
-  <!-- Load order: config → app → components → bootstrap -->
+  <!-- Load order: config → helpers → sections → bootstrap -->
   <script src="config/site.config.js"></script>
+  <script src="dom.js"></script>
+  <script src="sections.js"></script>
   <script src="app.js"></script>
-  <script src="components/Navigation.js"></script>
-  <script src="components/PastWorks.js"></script>
-  <script src="components/Pricing.js"></script>
-  <script src="components/Achievements.js"></script>
-  <script src="components/Libraries.js"></script>
-  <script src="components/Skills.js"></script>
-  <script src="components/Tos.js"></script>
-  <script src="components/Contact.js"></script>
+
+  <noscript>
+    <p>This page builds its content with JavaScript. Reach me on Discord at
+      <strong>armenie54</strong>, or on GitHub at
+      <a href="https://github.com/Vel136">github.com/Vel136</a>.</p>
+  </noscript>
 
 </body>
 </html>
